@@ -73,7 +73,7 @@ pub fn is_qiniu_enabled() -> bool {
 }
 
 fn build_http_client() -> HTTPClient {
-    let mut base_timeout_ms = 3000u64;
+    let mut base_timeout_ms = 1000u64;
     let mut dial_timeout_ms = 50u64;
     if let Some(config) = QINIU_CONFIG.read().unwrap().as_ref() {
         if let Some(value) = config.base_timeout_ms {
